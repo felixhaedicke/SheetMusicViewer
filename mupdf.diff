@@ -1,0 +1,12 @@
+diff --git a/fitz/memento.h b/fitz/memento.h
+index 4831349..1371737 100644
+--- a/fitz/memento.h
++++ b/fitz/memento.h
+@@ -135,6 +135,7 @@
+ 
+ #ifndef MEMENTO_H
+ 
++#include <stddef.h>
+ #include <memory.h>
+ 
+ #define MEMENTO_H
