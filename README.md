@@ -17,6 +17,11 @@ For the mupdf subproject, some files need to be generated:
     make generate
     cd ..
 
+Generate icon png files:
+    rsvg-convert icon.svg -w 48 -h 48 -o icon-48.png
+    rsvg-convert icon.svg -w 72 -h 72 -o icon-72.png
+    rsvg-convert icon.svg -w 96 -h 96 -o icon-96.png
+
 Build SheetMusicViewer using qmake (or an IDE of your choice):
 
     qmake
