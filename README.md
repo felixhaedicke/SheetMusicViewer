@@ -21,7 +21,7 @@ Build SheetMusicViewer using qmake (or an IDE of your choice):
 
     qmake
 
-At leas when compiling for Android, you can get errors like this:
+At least when compiling for Android, you can get errors like this:
 
     mupdf/fitz/memento.h:182:1: error: unknown type name 'size_t'
 
