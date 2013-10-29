@@ -22,8 +22,7 @@ INCLUDEPATH += mupdf \
 QMAKE_CFLAGS += \
     -DFT2_BUILD_LIBRARY -DDARWIN_NO_CARBON -DHAVE_STDINT_H \
     \'-DFT_CONFIG_MODULES_H=\"slimftmodules.h\"\' \
-    \'-DFT_CONFIG_OPTIONS_H=\"slimftoptions.h\"\' \
-    -Wa,-I$$IN_PWD/mupdf
+    \'-DFT_CONFIG_OPTIONS_H=\"slimftoptions.h\"\'
 
 SOURCES += main.cpp \
     mainwindow.cpp \
