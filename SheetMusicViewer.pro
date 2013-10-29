@@ -21,6 +21,7 @@ INCLUDEPATH += mupdf \
 
 QMAKE_CFLAGS += \
     -DFT2_BUILD_LIBRARY -DDARWIN_NO_CARBON -DHAVE_STDINT_H \
+    -DOPJ_STATIC \
     \'-DFT_CONFIG_MODULES_H=\"slimftmodules.h\"\' \
     \'-DFT_CONFIG_OPTIONS_H=\"slimftoptions.h\"\'
 
