@@ -258,7 +258,7 @@ OTHER_FILES += \
     android/src/org/qtproject/qt5/android/bindings/QtApplication.java \
     android/src/org/qtproject/qt5/android/bindings/QtActivity.java
 
-android|!unix {
+mac|android|!unix {
     SOURCES += mupdf/thirdparty/freetype/src/base/ftbase.c \
         mupdf/thirdparty/freetype/src/base/ftbbox.c \
         mupdf/thirdparty/freetype/src/base/ftbitmap.c \
@@ -287,6 +287,8 @@ RESOURCES += \
 
 unix {
     !android {
-        LIBS += -lfreetype
+        !mac {
+            LIBS += -lfreetype
+        }
     }
 }
