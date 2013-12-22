@@ -3,20 +3,18 @@
 
 #include <QWidget>
 
-namespace Ui {
-class SettingsWidget;
-}
+#include "ui_settingswidget.h"
 
 class SettingsWidget : public QWidget
 {
     Q_OBJECT
     
 public:
+    Ui::SettingsWidget *ui;
+
     explicit SettingsWidget(QWidget *parent = 0);
     ~SettingsWidget();
     
-private:
-    Ui::SettingsWidget *ui;
 };
 
 #endif // SETTINGSWIDGET_H

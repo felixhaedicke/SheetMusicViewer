@@ -51,23 +51,23 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
     stackedLayout->addWidget(settingsWidget);
     settingsWidget->hide();
 
-    connect(settingsWidget->findChild<QPushButton*>("selectSheetButton"), SIGNAL(clicked()), this, SIGNAL(requestShowSheetSelection()));
-    connect(settingsWidget->findChild<QPushButton*>("restoreLayoutButton"), SIGNAL(clicked()), this, SLOT(resetZoomAndOffset()));
-    connect(settingsWidget->findChild<QPushButton*>("zoomInButton"), SIGNAL(clicked()), this, SLOT(zoomIn()));
-    connect(settingsWidget->findChild<QPushButton*>("zoomOutButton"), SIGNAL(clicked()), this, SLOT(zoomOut()));
-    connect(settingsWidget->findChild<QPushButton*>("upButton"), SIGNAL(clicked()), this, SLOT(moveUp()));
-    connect(settingsWidget->findChild<QPushButton*>("downButton"), SIGNAL(clicked()), this, SLOT(moveDown()));
-    connect(settingsWidget->findChild<QPushButton*>("leftButton"), SIGNAL(clicked()), this, SLOT(moveLeft()));
-    connect(settingsWidget->findChild<QPushButton*>("rightButton"), SIGNAL(clicked()), this, SLOT(moveRight()));
-    connect(settingsWidget->findChild<QPushButton*>("increasePagesCountButton"), SIGNAL(clicked()), this, SLOT(increaseShownPagesCount()));
-    connect(settingsWidget->findChild<QPushButton*>("decreasePagesCountButton"), SIGNAL(clicked()), this, SLOT(decreaseShownPagesCount()));
-    connect(settingsWidget->findChild<QPushButton*>("previousPageButton"), SIGNAL(clicked()), this, SLOT(previousPagesSet()));
-    connect(settingsWidget->findChild<QPushButton*>("nextPageButton"), SIGNAL(clicked()), this, SLOT(nextPagesSet()));
-    connect(settingsWidget->findChild<QPushButton*>("previousMarkedPageButton"), SIGNAL(clicked()), this, SLOT(toPreviousMarkedPage()));
-    connect(settingsWidget->findChild<QPushButton*>("firstPageButton"), SIGNAL(clicked()), this, SLOT(toFirstPage()));
-    connect(settingsWidget->findChild<QPushButton*>("markButton"), SIGNAL(clicked()), this, SLOT(markOrUnmarkLastClickedPage()));
+    connect(settingsWidget->ui->selectSheetButton, SIGNAL(clicked()), this, SIGNAL(requestShowSheetSelection()));
+    connect(settingsWidget->ui->restoreLayoutButton, SIGNAL(clicked()), this, SLOT(resetZoomAndOffset()));
+    connect(settingsWidget->ui->zoomInButton, SIGNAL(clicked()), this, SLOT(zoomIn()));
+    connect(settingsWidget->ui->zoomOutButton, SIGNAL(clicked()), this, SLOT(zoomOut()));
+    connect(settingsWidget->ui->upButton, SIGNAL(clicked()), this, SLOT(moveUp()));
+    connect(settingsWidget->ui->downButton, SIGNAL(clicked()), this, SLOT(moveDown()));
+    connect(settingsWidget->ui->leftButton, SIGNAL(clicked()), this, SLOT(moveLeft()));
+    connect(settingsWidget->ui->rightButton, SIGNAL(clicked()), this, SLOT(moveRight()));
+    connect(settingsWidget->ui->increasePagesCountButton, SIGNAL(clicked()), this, SLOT(increaseShownPagesCount()));
+    connect(settingsWidget->ui->decreasePagesCountButton, SIGNAL(clicked()), this, SLOT(decreaseShownPagesCount()));
+    connect(settingsWidget->ui->previousPageButton, SIGNAL(clicked()), this, SLOT(previousPagesSet()));
+    connect(settingsWidget->ui->nextPageButton, SIGNAL(clicked()), this, SLOT(nextPagesSet()));
+    connect(settingsWidget->ui->previousMarkedPageButton, SIGNAL(clicked()), this, SLOT(toPreviousMarkedPage()));
+    connect(settingsWidget->ui->firstPageButton, SIGNAL(clicked()), this, SLOT(toFirstPage()));
+    connect(settingsWidget->ui->markButton, SIGNAL(clicked()), this, SLOT(markOrUnmarkLastClickedPage()));
 
-    QPushButton* quitButton = settingsWidget->findChild<QPushButton*>("quitButton");
+    QPushButton* quitButton = settingsWidget->ui->quitButton;
     connect(quitButton, SIGNAL(clicked()), this, SIGNAL(requestExit()));
     if (settings.value("hideQuitButton", false).toBool())
     {
