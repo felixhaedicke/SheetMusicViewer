@@ -17,6 +17,12 @@ For the mupdf subproject, some files need to be generated:
     make generate
     cd ..
 
+or alternatively, when building with MSVC on Windows:
+
+    cd mupdf/win32
+    generate.bat
+    cd ../..
+
 Generate icon png files:
 
     rsvg-convert icon.svg -w 48 -h 48 -o icon-48.png
