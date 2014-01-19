@@ -318,7 +318,9 @@ void SheetsWidget::mousePressEvent(QMouseEvent* event)
     }
 
     int prevLastMousePressPageNo = lastMousePressPageNo;
-    lastMousePressPageNo = firstRenderedPageNo + qRound(static_cast<double>(event->x()) * columnsCount / width()) + static_cast<double>(qRound(static_cast<double>(event->y()) * rowsCount / height()) * columnsCount);
+    lastMousePressPageNo = firstRenderedPageNo
+            + static_cast<int>(static_cast<double>(event->x()) * static_cast<double>(columnsCount) / static_cast<double>(width()))
+            + (static_cast<int>(static_cast<double>(event->y()) * static_cast<double>(rowsCount) / static_cast<double>(height())) * columnsCount);
     if (prevLastMousePressPageNo != lastMousePressPageNo)
     {
         update();
