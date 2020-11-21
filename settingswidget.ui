@@ -32,8 +32,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/media-record</normaloff>:/icons/media-record</iconset>
+      <iconset theme="media-record" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/media-record</normaloff>:/icons/media-record</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -81,7 +81,7 @@
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="SheetMusicViewer.qrc">
+      <iconset theme="document-open" resource="SheetMusicViewer.qrc">
        <normaloff>:/icons/document-open</normaloff>:/icons/document-open</iconset>
      </property>
      <property name="iconSize">
@@ -130,8 +130,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/application-exit</normaloff>:/icons/application-exit</iconset>
+      <iconset theme="application-exit" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/application-exit</normaloff>:/icons/application-exit</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -208,8 +208,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/zoom-fit-best</normaloff>:/icons/zoom-fit-best</iconset>
+         <iconset theme="zoom-fit-best" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/zoom-fit-best</normaloff>:/icons/zoom-fit-best</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -231,8 +231,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/zoom-in</normaloff>:/icons/zoom-in</iconset>
+         <iconset theme="zoom-in" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/zoom-in</normaloff>:/icons/zoom-in</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -257,8 +257,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/zoom-out</normaloff>:/icons/zoom-out</iconset>
+         <iconset theme="zoom-out" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/zoom-out</normaloff>:/icons/zoom-out</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -299,8 +299,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/go-up</normaloff>:/icons/go-up</iconset>
+         <iconset theme="go-up" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/go-up</normaloff>:/icons/go-up</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -338,8 +338,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/go-previous</normaloff>:/icons/go-previous</iconset>
+         <iconset theme="go-previous" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/go-previous</normaloff>:/icons/go-previous</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -364,8 +364,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/go-down</normaloff>:/icons/go-down</iconset>
+         <iconset theme="go-down" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/go-down</normaloff>:/icons/go-down</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -390,8 +390,8 @@
          <string/>
         </property>
         <property name="icon">
-        <iconset resource="SheetMusicViewer.qrc">
-         <normaloff>:/icons/go-next</normaloff>:/icons/go-next</iconset>
+         <iconset theme="go-next" resource="SheetMusicViewer.qrc">
+          <normaloff>:/icons/go-next</normaloff>:/icons/go-next</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -458,8 +458,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/list-add</normaloff>:/icons/list-add</iconset>
+      <iconset theme="list-add" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/list-add</normaloff>:/icons/list-add</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -481,8 +481,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/list-remove</normaloff>:/icons/list-remove</iconset>
+      <iconset theme="list-remove" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/list-remove</normaloff>:/icons/list-remove</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -504,8 +504,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/media-playback-stop</normaloff>:/icons/media-playback-stop</iconset>
+      <iconset theme="media-playback-stop" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/media-playback-stop</normaloff>:/icons/media-playback-stop</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -540,8 +540,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/media-seek-backward</normaloff>:/icons/media-seek-backward</iconset>
+      <iconset theme="media-seek-backward" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/media-seek-backward</normaloff>:/icons/media-seek-backward</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -563,8 +563,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/media-skip-backward</normaloff>:/icons/media-skip-backward</iconset>
+      <iconset theme="media-skip-backward" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/media-skip-backward</normaloff>:/icons/media-skip-backward</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -586,8 +586,8 @@
       <string/>
      </property>
      <property name="icon">
-     <iconset resource="SheetMusicViewer.qrc">
-      <normaloff>:/icons/media-seek-forward</normaloff>:/icons/media-seek-forward</iconset>
+      <iconset theme="media-seek-forward" resource="SheetMusicViewer.qrc">
+       <normaloff>:/icons/media-seek-forward</normaloff>:/icons/media-seek-forward</iconset>
      </property>
      <property name="iconSize">
       <size>
