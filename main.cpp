@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QIcon>
+#include <QProcess>
 #include <QSettings>
 #include <QString>
 
@@ -32,7 +33,20 @@ int main(int argc, char *argv[])
         settings.setValue("customStyle", QString());
     }
 
+    QString quitCommand = settings.value("quitCommand").toString();
+    if (quitCommand.isNull() || quitCommand.isEmpty())
+    {
+        settings.setValue("quitCommand", QString());
+    }
+
     MainWindow w;
     w.show();
-    return a.exec();
+    int ret = a.exec();
+
+    if ((ret == 0) && !quitCommand.isNull() && !quitCommand.isEmpty())
+    {
+        QProcess::execute(quitCommand);
+    }
+
+    return ret;
 }
