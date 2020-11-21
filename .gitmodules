@@ -1,6 +1,7 @@
 [submodule "mupdf"]
 	path = mupdf
 	url = http://git.ghostscript.com/mupdf.git
-[submodule "gnome-icon-theme"]
-	path = gnome-icon-theme
-	url = https://git.gnome.org/browse/gnome-icon-theme
+
+[submodule "breeze-icons"]
+	path = breeze-icons
+	url = https://github.com/KDE/breeze-icons.git

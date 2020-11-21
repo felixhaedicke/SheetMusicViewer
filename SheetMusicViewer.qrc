@@ -1,20 +1,20 @@
 <RCC>
     <qresource prefix="/icons">
-        <file alias="document-open">gnome-icon-theme/gnome/48x48/actions/document-open.png</file>
-        <file alias="zoom-fit-best">gnome-icon-theme/gnome/48x48/actions/zoom-fit-best.png</file>
-        <file alias="zoom-in">gnome-icon-theme/gnome/48x48/actions/zoom-in.png</file>
-        <file alias="zoom-out">gnome-icon-theme/gnome/48x48/actions/zoom-out.png</file>
-        <file alias="media-record">gnome-icon-theme/gnome/48x48/actions/media-record.png</file>
-        <file alias="media-seek-backward">gnome-icon-theme/gnome/48x48/actions/media-seek-backward.png</file>
-        <file alias="media-seek-forward">gnome-icon-theme/gnome/48x48/actions/media-seek-forward.png</file>
-        <file alias="media-skip-backward">gnome-icon-theme/gnome/48x48/actions/media-skip-backward.png</file>
-        <file alias="go-up">gnome-icon-theme/gnome/48x48/actions/go-up.png</file>
-        <file alias="go-previous">gnome-icon-theme/gnome/48x48/actions/go-previous.png</file>
-        <file alias="go-next">gnome-icon-theme/gnome/48x48/actions/go-next.png</file>
-        <file alias="go-down">gnome-icon-theme/gnome/48x48/actions/go-down.png</file>
-        <file alias="application-exit">gnome-icon-theme/gnome/48x48/actions/application-exit.png</file>
-        <file alias="list-add">gnome-icon-theme/gnome/48x48/actions/list-add.png</file>
-        <file alias="list-remove">gnome-icon-theme/gnome/48x48/actions/list-remove.png</file>
-        <file alias="media-playback-stop">gnome-icon-theme/gnome/48x48/actions/media-playback-stop.png</file>
+        <file alias="document-open">breeze-icons/icons/actions/32/document-open.svg</file>
+        <file alias="zoom-fit-best">breeze-icons/icons/actions/32/zoom-fit-best.svg</file>
+        <file alias="zoom-in">breeze-icons/icons/actions/32/zoom-in.svg</file>
+        <file alias="zoom-out">breeze-icons/icons/actions/32/zoom-out.svg</file>
+        <file alias="media-record">breeze-icons/icons/actions/32/media-record.svg</file>
+        <file alias="media-seek-backward">breeze-icons/icons/actions/32/media-seek-backward.svg</file>
+        <file alias="media-seek-forward">breeze-icons/icons/actions/32/media-seek-forward.svg</file>
+        <file alias="media-skip-backward">breeze-icons/icons/actions/32/media-skip-backward.svg</file>
+        <file alias="go-up">breeze-icons/icons/actions/32/go-up.svg</file>
+        <file alias="go-previous">breeze-icons/icons/actions/32/go-previous.svg</file>
+        <file alias="go-next">breeze-icons/icons/actions/32/go-next.svg</file>
+        <file alias="go-down">breeze-icons/icons/actions/32/go-down.svg</file>
+        <file alias="application-exit">breeze-icons/icons/actions/32/application-exit.svg</file>
+        <file alias="list-add">breeze-icons/icons/actions/22/list-add.svg</file>
+        <file alias="list-remove">breeze-icons/icons/actions/22/list-remove.svg</file>
+        <file alias="media-playback-stop">breeze-icons/icons/actions/32/media-playback-stop.svg</file>
     </qresource>
 </RCC>

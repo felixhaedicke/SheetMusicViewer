@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2012-04-14T21:50:01
 # -------------------------------------------------
-QT += widgets
+QT += widgets svg
 TARGET = SheetMusicViewer
 TEMPLATE = app
 
