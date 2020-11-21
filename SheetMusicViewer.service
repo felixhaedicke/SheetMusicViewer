@@ -1,0 +1,15 @@
+[Unit]
+Description = SheetMusicViewer
+After = remote-fs.target network-online.target
+
+[Service]
+User = pi
+Group = pi
+Type = simple
+Environment = QT_QPA_PLATFORM=eglfs
+ExecStart = /usr/local/bin/SheetMusicViewer
+Restart = on-abort
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target
