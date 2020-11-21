@@ -23,11 +23,11 @@ or alternatively, when building with MSVC on Windows:
     generate.bat
     cd ../..
 
-Generate icon png files:
+Generate icon png files (for Android):
 
-    rsvg-convert icon.svg -w 48 -h 48 -o icon-48.png
-    rsvg-convert icon.svg -w 72 -h 72 -o icon-72.png
-    rsvg-convert icon.svg -w 96 -h 96 -o icon-96.png
+    rsvg-convert icon.svg -w 32 -h 32 -o android/res/drawable-ldpi/icon.png
+    rsvg-convert icon.svg -w 48 -h 48 -o android/res/drawable-mdpi/icon.png
+    rsvg-convert icon.svg -w 72 -h 72 -o android/res/drawable-hdpi/icon.png
 
 Build SheetMusicViewer using qmake (or an IDE of your choice):
 
