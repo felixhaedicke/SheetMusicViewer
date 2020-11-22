@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <memory>
+
 #include <QGridLayout>
 #include <QStackedLayout>
 #include <QString>
@@ -20,7 +22,7 @@ protected:
 
 private:
     QStackedLayout* stackedLayout;
-    SheetsWidget* sheetsWidget;
+    std::unique_ptr<SheetsWidget> sheetsWidget;
     SheetSelectWidget* sheetSelectWidget;
 
 private slots:

@@ -7,8 +7,3 @@ SettingsWidget::SettingsWidget(QWidget *parent) :
 {
     ui->setupUi(this);
 }
-
-SettingsWidget::~SettingsWidget()
-{
-    delete ui;
-}

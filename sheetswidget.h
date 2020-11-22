@@ -1,6 +1,8 @@
 #ifndef SHEETSWIDGET_H
 #define SHEETSWIDGET_H
 
+#include <memory>
+
 #include <QBitmap>
 #include <QFileInfo>
 #include <QKeyEvent>
@@ -96,16 +98,16 @@ private:
 
     QFileInfo documentFileInfo;
     QString documentBaseName;
-    MuPdfDocument* document;
+    std::unique_ptr<MuPdfDocument> document;
 
     mutable QMutex documentPagesPixmapsMutex;
-    QImage* documentPagesImages;
-    QPixmap* documentPagesPixmaps;
+    std::unique_ptr<QImage[]> documentPagesImages;
+    std::unique_ptr<QPixmap[]> documentPagesPixmaps;
     QSize documentPagesPixmapsRenderSize;
     bool documentPagesScaleToWidth;
 
     QThreadPool* pagesRendererWorker;
-    PagesRenderer* pagesRenderer;
+    std::unique_ptr<PagesRenderer> pagesRenderer;
 
     int rowsCount;
     int columnsCount;

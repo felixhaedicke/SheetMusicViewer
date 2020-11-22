@@ -20,10 +20,6 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
     QWidget(parent),
     documentFileInfo(documentFileInfo),
     documentBaseName(documentFileInfo.baseName()),
-    document(NULL),
-    documentPagesImages(NULL),
-    documentPagesPixmaps(NULL),
-    pagesRenderer(NULL),
     rowsCount(1),
     columnsCount(2),
     firstRenderedPageNo(0),
@@ -105,18 +101,17 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
         connect(settingsWidgetButton, SIGNAL(released()), settingsControlsInactivityTimer, SLOT(start()));
     }
 
-    document = new MuPdfDocument(documentFileInfo.absoluteFilePath());
+    document = std::unique_ptr<MuPdfDocument>(new MuPdfDocument(documentFileInfo.absoluteFilePath()));
     int pagesCount = document->pagesCount();
     if (pagesCount < 1)
     {
-        delete document;
-        document = NULL;
+        document.reset();
     }
 
     if (document)
     {
-        documentPagesImages = new QImage[pagesCount];
-        documentPagesPixmaps = new QPixmap[pagesCount];
+        documentPagesImages = std::unique_ptr<QImage[]>(new QImage[pagesCount]);
+        documentPagesPixmaps = std::unique_ptr<QPixmap[]>(new QPixmap[pagesCount]);
     }
 
     settings.beginGroup(documentBaseName);
@@ -137,12 +132,7 @@ SheetsWidget::~SheetsWidget()
     if (pagesRenderer)
     {
         pagesRenderer->stopAndWait();
-        delete pagesRenderer;
     }
-
-    delete document;
-    delete [] documentPagesImages;
-    delete [] documentPagesPixmaps;
 }
 
 void SheetsWidget::decreaseShownPagesCount()
@@ -453,8 +443,7 @@ void SheetsWidget::reRenderPixmaps()
     if (pagesRenderer)
     {
         pagesRenderer->stopAndWait();
-        delete pagesRenderer;
-        pagesRenderer = NULL;
+        pagesRenderer.reset();
     }
 
     if (document)
@@ -480,9 +469,9 @@ void SheetsWidget::reRenderPixmaps()
         {
             pagesToRenderFirst.insert(i);
         }
-        pagesRenderer = new PagesRenderer(this, pagesToRenderFirst);
-        connect(pagesRenderer, SIGNAL(pageRendered(int)), this, SLOT(update()));
-        pagesRendererWorker->start(pagesRenderer);
+        pagesRenderer = std::unique_ptr<PagesRenderer>(new PagesRenderer(this, pagesToRenderFirst));
+        connect(pagesRenderer.get(), SIGNAL(pageRendered(int)), this, SLOT(update()));
+        pagesRendererWorker->start(pagesRenderer.get());
     }
 }
 
