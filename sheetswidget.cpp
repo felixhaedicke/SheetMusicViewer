@@ -75,7 +75,7 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
     }
 
     QPalette pal(palette());
-    pal.setColor(QPalette::Background, Qt::white);
+    pal.setColor(QPalette::Window, Qt::white);
     setAutoFillBackground(true);
     setPalette(pal);
 

@@ -56,7 +56,7 @@ void SheetSelectWidget::resizeEvent(QResizeEvent* event)
     for (int i = 0; i < pdfFiles.count(); ++i)
     {
         QString baseName = pdfFiles.at(i).baseName();
-        while (fontMetrics.width(baseName) > maxTextWidth)
+        while (fontMetrics.boundingRect(baseName).width() > maxTextWidth)
         {
             font.setPixelSize(font.pixelSize() - 2);
             fontMetrics = QFontMetrics(font);
