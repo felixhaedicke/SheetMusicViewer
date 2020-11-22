@@ -19,9 +19,10 @@ private:
     QImage renderPageScaled(int pageIdx, int size, bool scaledToWidth) const;
 
 public:
-    explicit PdfDocument(const QString& fileName) throw();
-    ~PdfDocument() throw();
-    int pagesCount() const throw();
+    explicit PdfDocument(const QString& fileName) noexcept;
+    ~PdfDocument();
+
+    int pagesCount() const noexcept;
 
     QImage renderPageScaledToWidth(int pageIdx, int width) const
     {

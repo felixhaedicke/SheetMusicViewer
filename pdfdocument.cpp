@@ -6,19 +6,19 @@ extern "C"
     #include "mupdf.h"
 }
 
-PdfDocument::PdfDocument(const QString& fileName) throw()
+PdfDocument::PdfDocument(const QString& fileName) noexcept
 {
     documentContext = (void*) fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
     document = (void*) fz_open_document((fz_context*) documentContext, fileName.toLocal8Bit().data());
 }
 
-PdfDocument::~PdfDocument() throw()
+PdfDocument::~PdfDocument()
 {
     fz_close_document((fz_document*) document);
     fz_free_context((fz_context*) documentContext);
 }
 
-int PdfDocument::pagesCount() const throw()
+int PdfDocument::pagesCount() const noexcept
 {
     QMutexLocker mutexLocker(&mutex);
     return fz_count_pages((fz_document*) document);

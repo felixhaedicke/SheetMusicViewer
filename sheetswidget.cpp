@@ -744,7 +744,7 @@ void PagesRenderer::stopAndWait()
     sheetsWidget->pagesRendererWorker->waitForDone();
 }
 
-int PagesRenderer::getRenderedPagesCount() const throw()
+int PagesRenderer::getRenderedPagesCount() const noexcept
 {
     QMutexLocker renderedPagesMutexMutexLocker(&renderedPagesMutex);
     return renderedPages.count();

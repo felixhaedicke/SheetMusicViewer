@@ -35,15 +35,15 @@ public:
                           const QFileInfo& documentFileInfo);
     virtual ~SheetsWidget();
 
-    const QFileInfo& getDocumentFileInfo() const throw() { return documentFileInfo; }
+    const QFileInfo& getDocumentFileInfo() const noexcept { return documentFileInfo; }
 
     void setScaleFactor(double scaleFactor) { setScaleFactor(scaleFactor, true); }
     void setCustomXOffset(int customXOffset) { setCustomXOffset(customXOffset, true); }
     void setCustomYOffset(int customYOffset) { setCustomYOffset(customYOffset, true); }
 
-    double getScaleFactor() const throw() { return scaleFactor; }
-    int getCustomXOffset() const throw() { return customXOffset; }
-    int getCustomYOffset() const throw() { return customYOffset; }
+    double getScaleFactor() const noexcept { return scaleFactor; }
+    int getCustomXOffset() const noexcept { return customXOffset; }
+    int getCustomYOffset() const noexcept { return customYOffset; }
 
     void setShownPagesCount(int preferedPagesCount) { setShownPagesCount(preferedPagesCount, true); }
 
@@ -132,7 +132,7 @@ public:
     virtual ~PagesRenderer();
     void run();
     void stopAndWait();
-    int getRenderedPagesCount() const throw();
+    int getRenderedPagesCount() const noexcept;
 
 signals:
     void pageRendered(int pageNo);
