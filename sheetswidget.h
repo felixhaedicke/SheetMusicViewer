@@ -130,6 +130,7 @@ Q_OBJECT
 public:
     PagesRenderer(SheetsWidget* sheetsWidget, const QSet<int>& pagesToRenderFirst);
     virtual ~PagesRenderer();
+
     void run();
     void stopAndWait();
     int getRenderedPagesCount() const noexcept;
