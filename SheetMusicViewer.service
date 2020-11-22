@@ -8,7 +8,7 @@ Group = pi
 Type = simple
 Environment = QT_QPA_PLATFORM=eglfs
 ExecStart = /usr/local/bin/SheetMusicViewer
-Restart = on-abort
+Restart = on-failure
 RestartSec = 5
 
 [Install]
