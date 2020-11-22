@@ -1,7 +1,3 @@
-[submodule "mupdf"]
-	path = mupdf
-	url = http://git.ghostscript.com/mupdf.git
-
 [submodule "breeze-icons"]
 	path = breeze-icons
 	url = https://github.com/KDE/breeze-icons.git

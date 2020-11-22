@@ -4,6 +4,7 @@
 #include <QImage>
 #include <QMutex>
 #include <QString>
+#include <QPdfDocument>
 
 class PdfDocument final
 {
@@ -11,8 +12,7 @@ private:
     PdfDocument();
     PdfDocument(const PdfDocument&);
 
-    void* documentContext;
-    void* document;
+    mutable QPdfDocument document;
 
     mutable QMutex mutex;
 
@@ -20,7 +20,6 @@ private:
 
 public:
     explicit PdfDocument(const QString& fileName) noexcept;
-    ~PdfDocument();
 
     int pagesCount() const noexcept;
 
