@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 
+#include <QApplication>
 #include <QKeyEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -28,6 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::keyPressEvent(QKeyEvent* event)
 {
+    if ((event->key() == Qt::Key_C) && (event->modifiers() == Qt::ControlModifier))
+    {
+        QApplication::quit();
+    }
+
     if (sheetsWidget && (stackedLayout->currentWidget() == sheetsWidget.get()))
     {
         switch (event->key())
@@ -123,7 +129,8 @@ void MainWindow::keyPressEvent(QKeyEvent* event)
             close();
             break;
 
-        default: QWidget::keyPressEvent(event);
+        default:
+            QWidget::keyPressEvent(event);
         }
     }
     else
