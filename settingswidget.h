@@ -14,7 +14,7 @@ class SettingsWidget : public QWidget
 public:
     std::unique_ptr<Ui::SettingsWidget> ui;
 
-    explicit SettingsWidget(QWidget* parent = 0);
+    explicit SettingsWidget(QWidget* parent = nullptr);
     
 };
 
