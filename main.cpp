@@ -38,15 +38,18 @@ int main(int argc, char *argv[])
     {
         settings.setValue("quitCommand", QString());
     }
+    else
+    {
+        QObject::connect(&a, &QApplication::lastWindowClosed, [&quitCommand]()
+        {
+            if ((QApplication::queryKeyboardModifiers() & Qt::ShiftModifier) == 0)
+            {
+                QProcess::execute(quitCommand);
+            }
+        });
+    }
 
     MainWindow w;
     w.show();
-    int ret = a.exec();
-
-    if ((ret == 0) && !quitCommand.isNull() && !quitCommand.isEmpty() && ((QApplication::queryKeyboardModifiers() & Qt::ShiftModifier) == 0))
-    {
-        QProcess::execute(quitCommand);
-    }
-
-    return ret;
+    return a.exec();
 }
