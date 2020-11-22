@@ -93,7 +93,7 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
 
     connect(longClickTimer, SIGNAL(timeout()), settingsControlsInactivityTimer, SLOT(start()));
 
-    foreach(QPushButton* settingsWidgetButton, settingsWidget->findChildren<QPushButton*>())
+    for (QPushButton* settingsWidgetButton : settingsWidget->findChildren<QPushButton*>())
     {
         settingsWidgetButton->setMouseTracking(true);
         settingsWidgetButton->installEventFilter(this);
@@ -514,7 +514,7 @@ QString SheetsWidget::getLayoutSettingGroupName()
 QString SheetsWidget::serializeIntSet(const QSet<int>& intSet)
 {
     QString ret = "";
-    Q_FOREACH(int value, intSet)
+    for (int value : intSet)
     {
         ret += QString::number(value);
         ret += ";";
@@ -526,7 +526,7 @@ QString SheetsWidget::serializeIntSet(const QSet<int>& intSet)
 QSet<int> SheetsWidget::deserializeIntSet(const QString& intSetStr)
 {
     QSet<int> ret;
-    Q_FOREACH(const QString& valueStr, intSetStr.split(";"))
+    for (const QString& valueStr : intSetStr.split(";"))
     {
         if (!valueStr.isEmpty())
         {

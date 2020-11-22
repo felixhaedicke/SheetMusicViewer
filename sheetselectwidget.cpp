@@ -63,7 +63,7 @@ void SheetSelectWidget::resizeEvent(QResizeEvent* event)
         }
     }
 
-    Q_FOREACH(QPushButton* docButton, buttons.keys())
+    for (QPushButton* docButton : buttons.keys())
     {
         docButton->setFont(font);
     }
