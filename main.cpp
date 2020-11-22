@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     w.show();
     int ret = a.exec();
 
-    if ((ret == 0) && !quitCommand.isNull() && !quitCommand.isEmpty())
+    if ((ret == 0) && !quitCommand.isNull() && !quitCommand.isEmpty() && ((QApplication::queryKeyboardModifiers() & Qt::ShiftModifier) == 0))
     {
         QProcess::execute(quitCommand);
     }
