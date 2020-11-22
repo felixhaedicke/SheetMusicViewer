@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     sheetSelectWidget = new SheetSelectWidget(this);
     stackedLayout->addWidget(sheetSelectWidget);
 
-    connect(sheetSelectWidget, SIGNAL(sheetSelected(QFileInfo)), this, SLOT(sheetSelected(QFileInfo)));
+    connect(sheetSelectWidget, &SheetSelectWidget::sheetSelected, this, &MainWindow::sheetSelected);
 }
 
 void MainWindow::keyPressEvent(QKeyEvent* event)
@@ -151,8 +151,8 @@ void MainWindow::sheetSelected(const QFileInfo& sheetFile)
         sheetsWidget = std::unique_ptr<SheetsWidget>(new SheetsWidget(this, sheetFile));
         stackedLayout->addWidget(sheetsWidget.get());
 
-        connect(sheetsWidget.get(), SIGNAL(requestShowSheetSelection()), this, SLOT(handleRequestShowSheetSelection()));
-        connect(sheetsWidget.get(), SIGNAL(requestExit()), this, SLOT(close()));
+        connect(sheetsWidget.get(), &SheetsWidget::requestShowSheetSelection, this, &MainWindow::handleRequestShowSheetSelection);
+        connect(sheetsWidget.get(), &SheetsWidget::requestExit, this, &QWidget::close);
     }
 
     stackedLayout->setCurrentWidget(sheetsWidget.get());

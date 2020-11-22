@@ -40,7 +40,7 @@ SheetSelectWidget::SheetSelectWidget(QWidget* parent) :
             docButton->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
             layout->addWidget(docButton, secondCol ? i - rowsCount : i, secondCol ? 1 : 0);
             buttons.insert(docButton, pdfFiles.at(i));
-            connect(docButton, SIGNAL(clicked()), this, SLOT(triggerSheetSelected()));
+            connect(docButton, &QPushButton::clicked, this, &SheetSelectWidget::triggerSheetSelected);
         }
     }
 }

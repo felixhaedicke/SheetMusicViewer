@@ -47,24 +47,24 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
     stackedLayout->addWidget(settingsWidget);
     settingsWidget->hide();
 
-    connect(settingsWidget->ui->selectSheetButton, SIGNAL(clicked()), this, SIGNAL(requestShowSheetSelection()));
-    connect(settingsWidget->ui->restoreLayoutButton, SIGNAL(clicked()), this, SLOT(resetZoomAndOffset()));
-    connect(settingsWidget->ui->zoomInButton, SIGNAL(clicked()), this, SLOT(zoomIn()));
-    connect(settingsWidget->ui->zoomOutButton, SIGNAL(clicked()), this, SLOT(zoomOut()));
-    connect(settingsWidget->ui->upButton, SIGNAL(clicked()), this, SLOT(moveUp()));
-    connect(settingsWidget->ui->downButton, SIGNAL(clicked()), this, SLOT(moveDown()));
-    connect(settingsWidget->ui->leftButton, SIGNAL(clicked()), this, SLOT(moveLeft()));
-    connect(settingsWidget->ui->rightButton, SIGNAL(clicked()), this, SLOT(moveRight()));
-    connect(settingsWidget->ui->increasePagesCountButton, SIGNAL(clicked()), this, SLOT(increaseShownPagesCount()));
-    connect(settingsWidget->ui->decreasePagesCountButton, SIGNAL(clicked()), this, SLOT(decreaseShownPagesCount()));
-    connect(settingsWidget->ui->previousPageButton, SIGNAL(clicked()), this, SLOT(previousPagesSet()));
-    connect(settingsWidget->ui->nextPageButton, SIGNAL(clicked()), this, SLOT(nextPagesSet()));
-    connect(settingsWidget->ui->previousMarkedPageButton, SIGNAL(clicked()), this, SLOT(toPreviousMarkedPage()));
-    connect(settingsWidget->ui->firstPageButton, SIGNAL(clicked()), this, SLOT(toFirstPage()));
-    connect(settingsWidget->ui->markButton, SIGNAL(clicked()), this, SLOT(markOrUnmarkLastClickedPage()));
+    connect(settingsWidget->ui->selectSheetButton, &QPushButton::clicked, this, &SheetsWidget::requestShowSheetSelection);
+    connect(settingsWidget->ui->restoreLayoutButton, &QPushButton::clicked, this, &SheetsWidget::resetZoomAndOffset);
+    connect(settingsWidget->ui->zoomInButton, &QPushButton::clicked, this, &SheetsWidget::zoomIn);
+    connect(settingsWidget->ui->zoomOutButton, &QPushButton::clicked, this, &SheetsWidget::zoomOut);
+    connect(settingsWidget->ui->upButton, &QPushButton::clicked, this, &SheetsWidget::moveUp);
+    connect(settingsWidget->ui->downButton, &QPushButton::clicked, this, &SheetsWidget::moveDown);
+    connect(settingsWidget->ui->leftButton, &QPushButton::clicked, this, &SheetsWidget::moveLeft);
+    connect(settingsWidget->ui->rightButton, &QPushButton::clicked, this, &SheetsWidget::moveRight);
+    connect(settingsWidget->ui->increasePagesCountButton, &QPushButton::clicked, this, &SheetsWidget::increaseShownPagesCount);
+    connect(settingsWidget->ui->decreasePagesCountButton, &QPushButton::clicked, this, &SheetsWidget::decreaseShownPagesCount);
+    connect(settingsWidget->ui->previousPageButton, &QPushButton::clicked, this, &SheetsWidget::previousPagesSet);
+    connect(settingsWidget->ui->nextPageButton, &QPushButton::clicked, this, &SheetsWidget::nextPagesSet);
+    connect(settingsWidget->ui->previousMarkedPageButton, &QPushButton::clicked, this, &SheetsWidget::toPreviousMarkedPage);
+    connect(settingsWidget->ui->firstPageButton, &QPushButton::clicked, this, &SheetsWidget::toFirstPage);
+    connect(settingsWidget->ui->markButton, &QPushButton::clicked, this, &SheetsWidget::markOrUnmarkLastClickedPage);
 
     QPushButton* quitButton = settingsWidget->ui->quitButton;
-    connect(quitButton, SIGNAL(clicked()), this, SIGNAL(requestExit()));
+    connect(quitButton, &QPushButton::clicked, this, &SheetsWidget::requestExit);
     if (settings.value("hideQuitButton", false).toBool())
     {
         quitButton->setVisible(false);
@@ -82,13 +82,13 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
     longClickTimer = new QTimer(this);
     longClickTimer->setSingleShot(true);
     longClickTimer->setInterval(400);
-    connect(longClickTimer, SIGNAL(timeout()), settingsWidget, SLOT(show()));
+    connect(longClickTimer, &QTimer::timeout, settingsWidget, &SettingsWidget::show);
     connect(longClickTimer, SIGNAL(timeout()), this, SLOT(update()));
 
     settingsControlsInactivityTimer = new QTimer(this);
     settingsControlsInactivityTimer->setSingleShot(true);
     settingsControlsInactivityTimer->setInterval(5000);
-    connect(settingsControlsInactivityTimer, SIGNAL(timeout()), settingsWidget, SLOT(hide()));
+    connect(settingsControlsInactivityTimer, &QTimer::timeout, settingsWidget, &QWidget::hide);
     connect(settingsControlsInactivityTimer, SIGNAL(timeout()), this, SLOT(update()));
 
     connect(longClickTimer, SIGNAL(timeout()), settingsControlsInactivityTimer, SLOT(start()));
@@ -97,7 +97,7 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
     {
         settingsWidgetButton->setMouseTracking(true);
         settingsWidgetButton->installEventFilter(this);
-        connect(settingsWidgetButton, SIGNAL(pressed()), settingsControlsInactivityTimer, SLOT(stop()));
+        connect(settingsWidgetButton, &QPushButton::pressed, settingsControlsInactivityTimer, &QTimer::stop);
         connect(settingsWidgetButton, SIGNAL(released()), settingsControlsInactivityTimer, SLOT(start()));
     }
 
