@@ -29,9 +29,18 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::keyPressEvent(QKeyEvent* event)
 {
-    if ((event->key() == Qt::Key_C) && (event->modifiers() == Qt::ControlModifier))
+    if (event->modifiers() == Qt::ControlModifier)
     {
-        QApplication::quit();
+        if (event->key() == Qt::Key_C)
+        {
+            QApplication::exit(130);
+            return;
+        }
+        else if (event->key() == Qt::Key_Q)
+        {
+            QApplication::quit();
+            return;
+        }
     }
 
     if (sheetsWidget && (stackedLayout->currentWidget() == sheetsWidget.get()))
