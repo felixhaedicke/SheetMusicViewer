@@ -5,7 +5,7 @@
 #include <QMutex>
 #include <QString>
 
-class PdfDocument
+class PdfDocument final
 {
 private:
     PdfDocument();
