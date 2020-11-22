@@ -27,10 +27,10 @@ QMAKE_CFLAGS += \
 
 SOURCES += main.cpp \
     mainwindow.cpp \
+    pdfdocument.cpp \
     sheetswidget.cpp \
     sheetselectwidget.cpp \
     settingswidget.cpp \
-    mupdfdocument.cpp \
     mupdf/cbz/mucbz.c \
     mupdf/xps/xps_zip.c \
     mupdf/xps/xps_util.c \
@@ -221,7 +221,7 @@ SOURCES += main.cpp \
     mupdf/thirdparty/openjpeg/thirdparty/libz/zutil.c
 
 HEADERS += mainwindow.h \
-    mupdfdocument.h \
+    pdfdocument.h \
     sheetswidget.h \
     sheetselectwidget.h \
     settingswidget.h

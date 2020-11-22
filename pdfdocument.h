@@ -1,15 +1,15 @@
-#ifndef MUPDFDOCUMENT_H
-#define MUPDFDOCUMENT_H
+#ifndef PDFDOCUMENT_H
+#define PDFDOCUMENT_H
 
 #include <QImage>
 #include <QMutex>
 #include <QString>
 
-class MuPdfDocument
+class PdfDocument
 {
 private:
-    MuPdfDocument();
-    MuPdfDocument(const MuPdfDocument&);
+    PdfDocument();
+    PdfDocument(const PdfDocument&);
 
     void* documentContext;
     void* document;
@@ -19,8 +19,8 @@ private:
     QImage renderPageScaled(int pageIdx, int size, bool scaledToWidth) const;
 
 public:
-    explicit MuPdfDocument(const QString& fileName) throw();
-    ~MuPdfDocument() throw();
+    explicit PdfDocument(const QString& fileName) throw();
+    ~PdfDocument() throw();
     int pagesCount() const throw();
 
     QImage renderPageScaledToWidth(int pageIdx, int width) const
@@ -36,4 +36,4 @@ public:
     QSize getPageSize(int pageIdx) const;
 };
 
-#endif // MUPDFDOCUMENT_H
+#endif // PDFDOCUMENT_H

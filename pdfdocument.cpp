@@ -1,4 +1,4 @@
-#include "mupdfdocument.h"
+#include "pdfdocument.h"
 
 extern "C"
 {
@@ -6,25 +6,25 @@ extern "C"
     #include "mupdf.h"
 }
 
-MuPdfDocument::MuPdfDocument(const QString& fileName) throw()
+PdfDocument::PdfDocument(const QString& fileName) throw()
 {
     documentContext = (void*) fz_new_context(NULL, NULL, FZ_STORE_UNLIMITED);
     document = (void*) fz_open_document((fz_context*) documentContext, fileName.toLocal8Bit().data());
 }
 
-MuPdfDocument::~MuPdfDocument() throw()
+PdfDocument::~PdfDocument() throw()
 {
     fz_close_document((fz_document*) document);
     fz_free_context((fz_context*) documentContext);
 }
 
-int MuPdfDocument::pagesCount() const throw()
+int PdfDocument::pagesCount() const throw()
 {
     QMutexLocker mutexLocker(&mutex);
     return fz_count_pages((fz_document*) document);
 }
 
-QImage MuPdfDocument::renderPageScaled(int pageIdx, int size, bool scaledToWidth) const
+QImage PdfDocument::renderPageScaled(int pageIdx, int size, bool scaledToWidth) const
 {
     QMutexLocker mutexLocker(&mutex);
 
@@ -66,7 +66,7 @@ QImage MuPdfDocument::renderPageScaled(int pageIdx, int size, bool scaledToWidth
     return pageImage;
 }
 
-QSize MuPdfDocument::getPageSize(int pageIdx) const
+QSize PdfDocument::getPageSize(int pageIdx) const
 {
     QMutexLocker mutexLocker(&mutex);
 

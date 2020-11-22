@@ -101,7 +101,7 @@ SheetsWidget::SheetsWidget(QWidget* parent, const QFileInfo& documentFileInfo) :
         connect(settingsWidgetButton, SIGNAL(released()), settingsControlsInactivityTimer, SLOT(start()));
     }
 
-    document = std::unique_ptr<MuPdfDocument>(new MuPdfDocument(documentFileInfo.absoluteFilePath()));
+    document = std::unique_ptr<PdfDocument>(new PdfDocument(documentFileInfo.absoluteFilePath()));
     int pagesCount = document->pagesCount();
     if (pagesCount < 1)
     {

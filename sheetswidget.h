@@ -22,7 +22,7 @@
 #include <QWaitCondition>
 #include <QWidget>
 
-#include "mupdfdocument.h"
+#include "pdfdocument.h"
 #include "settingswidget.h"
 
 class PagesRenderer;
@@ -98,7 +98,7 @@ private:
 
     QFileInfo documentFileInfo;
     QString documentBaseName;
-    std::unique_ptr<MuPdfDocument> document;
+    std::unique_ptr<PdfDocument> document;
 
     mutable QMutex documentPagesPixmapsMutex;
     std::unique_ptr<QImage[]> documentPagesImages;
